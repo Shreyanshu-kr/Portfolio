@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Shreyanshu Kumar — Full-Stack Developer &amp; Software Engineering Student Portfolio." />
+  <title>Shreyanshu Kumar — Full-Stack Developer &amp; Software Engineer</title>
+
+  <!-- Google Fonts: DM Sans (modern sans) & DM Mono (code/mono accents) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet" />
+
+  <!-- Icons: Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       GLOBAL ANIMATED BACKGROUND (Particles, Connecting Lines & Orbs)
+  ============================================================ -->
+  <div class="canvas-bg-container" aria-hidden="true">
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
+    <div class="gradient-orb orb-4"></div>
+    <canvas id="bgCanvas"></canvas>
+    <div class="bg-noise-overlay"></div>
+  </div>
+
+  <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner container">
+      <a href="#home" class="nav-logo">SK<span class="logo-dot">.</span></a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+        <a href="#home"         class="nav-link active">Home</a>
+        <a href="#projects"     class="nav-link">Projects</a>
+        <a href="#skills"       class="nav-link">Skills</a>
+        <a href="#about"        class="nav-link">About</a>
+        <a href="#achievements" class="nav-link">Achievements</a>
+        <a href="#resume"       class="nav-link">Resume</a>
+        <a href="#contact"      class="nav-link">Contact</a>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         HERO SECTION
+    ============================================================ -->
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-content reveal">
+          <span class="hero-tag">
+            <span class="pulse-dot"></span> Available for Internships &amp; Opportunities
+          </span>
+
+          <h1 class="hero-title">
+            <span class="hero-greeting">Hi, I'm</span>
+            <span class="hero-name">Shreyanshu Kumar</span>
+          </h1>
+
+          <p class="hero-role">
+            <span class="typed-prefix">&gt;&nbsp;</span>
+            <span id="typedText"></span>
+            <span class="typed-cursor">_</span>
+          </p>
+
+          <p class="hero-desc">
+            Computer Science &amp; Engineering student at Graphic Era Hill University (2023–2027) with a deep interest in full-stack web engineering, real-time architectures, and algorithmic problem-solving.
+          </p>
+
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">
+              View Projects <i class="ph ph-arrow-right"></i>
+            </a>
+            <a href="Resume/Shreyanshu_Resume (3).pdf" download="Shreyanshu_Kumar_Resume.pdf" class="btn btn-outline">
+              <i class="ph ph-download-simple"></i> Download Resume
+            </a>
+          </div>
+
+          <div class="hero-social">
+            <a href="https://github.com/Shreyanshu-kr" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+              <i class="ph ph-github-logo"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/shreyanshu-kr/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+              <i class="ph ph-linkedin-logo"></i>
+            </a>
+            <a href="https://leetcode.com/u/shreyanshukr/" target="_blank" rel="noopener" class="social-link" aria-label="LeetCode">
+              <svg viewBox="0 0 24 24" class="leet-svg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="LeetCode" aria-hidden="true">
+                <path fill="#FFA116" d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0z"/>
+                <path fill="#262626" d="M10.617 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/>
+              </svg>
+            </a>
+            <a href="mailto:shreyanshukumar23@gmail.com" class="social-link" aria-label="Email">
+              <i class="ph ph-envelope"></i>
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <span class="stat-num">150+</span>
+              <span class="stat-label">DSA Solved</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+              <span class="stat-num">3</span>
+              <span class="stat-label">Flagship Projects</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+              <span class="stat-num">7.15</span>
+              <span class="stat-label">B.Tech CGPA</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual-wrap reveal reveal-delay">
+          <div class="hero-portrait-container">
+            <!-- Continuous multi-spectral rotating ambient lighting -->
+            <div class="hero-glow-ring" aria-hidden="true"></div>
+
+            <div class="hero-photo-frame">
+              <div class="hero-photo-inner">
+                <img src="assets/photo.png" alt="Shreyanshu Kumar" class="hero-photo-img" />
+              </div>
+            </div>
+
+            <div class="floating-badge badge-top-left">
+              <i class="ph ph-code"></i> Full-Stack &amp; SDE
+            </div>
+            <div class="floating-badge badge-bottom-right">
+              <i class="ph ph-trophy"></i> 150+ DSA Solved
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FEATURED PROJECTS SECTION
+    ============================================================ -->
+    <section id="projects" class="section projects">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">// 01 &middot; FEATURED PROJECTS</span>
+          <h2 class="section-title">An index of things I've built</h2>
+          <p class="section-desc">
+            Production-ready web applications and computer science educational tools built with modern full-stack architectures.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- Project 1: Swift Talk (Featured Flagship) -->
+          <article class="project-card reveal featured-card">
+            <span class="featured-badge"><i class="ph ph-star-fill"></i> Flagship Full-Stack</span>
+            <div class="project-img">
+              <!-- Swift Talk – Chat UI Mockup -->
+              <div class="project-img-placeholder pi-swift" aria-hidden="true">
+                <div class="mockup-chat">
+                  <div class="mc-sidebar">
+                    <div class="mc-sidebar-header">
+                      <span class="mc-logo-dot"></span>
+                      <span class="mc-logo-txt">SwiftTalk</span>
+                    </div>
+                    <div class="mc-user mc-user-active">
+                      <span class="mc-avatar mc-av-blue">A</span>
+                      <span class="mc-uname">Alice</span>
+                      <span class="mc-online"></span>
+                    </div>
+                    <div class="mc-user">
+                      <span class="mc-avatar mc-av-violet">B</span>
+                      <span class="mc-uname">Bob</span>
+                    </div>
+                    <div class="mc-user">
+                      <span class="mc-avatar mc-av-sky">C</span>
+                      <span class="mc-uname">Carol</span>
+                      <span class="mc-online"></span>
+                    </div>
+                  </div>
+                  <div class="mc-main">
+                    <div class="mc-bubble mc-recv">Hey! Are you online?</div>
+                    <div class="mc-bubble mc-sent">Yes! Just joined 👋</div>
+                    <div class="mc-bubble mc-recv">Awesome, let's chat.</div>
+                    <div class="mc-input-bar">
+                      <span class="mc-input-placeholder">Type a message…</span>
+                      <span class="mc-send-btn">&#10148;</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="project-overlay">
+                <a href="https://github.com/Shreyanshu-kr/swift-talk" target="_blank" rel="noopener" class="overlay-btn" aria-label="View Swift Talk source code on GitHub">
+                  <i class="ph ph-github-logo"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">React 18</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">Express</span>
+                <span class="tag">Socket.io</span>
+                <span class="tag">MongoDB</span>
+                <span class="tag">Zustand</span>
+                <span class="tag">Tailwind CSS</span>
+                <span class="tag">DaisyUI</span>
+              </div>
+              <h3 class="project-title">Swift Talk – Real-Time Chat Application</h3>
+              <p class="project-desc">
+                Full-stack real-time messaging application powered by Socket.io and Node.js/Express. Features live bi-directional messaging, online user status, secure JWT authentication, MongoDB data persistence with Mongoose, Cloudinary image sharing, and Zustand state management with a modern dark-themed UI.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/Shreyanshu-kr/swift-talk" target="_blank" rel="noopener" class="btn btn-sm btn-outline">
+                  <i class="ph ph-github-logo"></i> View Source Code
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: C++ Compiler Visualizer -->
+          <article class="project-card reveal">
+            <div class="project-img">
+              <!-- C++ Compiler Visualizer – Pipeline Mockup -->
+              <div class="project-img-placeholder pi-compiler" aria-hidden="true">
+                <div class="mockup-compiler">
+                  <div class="mc-code-panel">
+                    <div class="mcc-line"><span class="mcc-kw">int</span> main() {</div>
+                    <div class="mcc-line">&nbsp;&nbsp;<span class="mcc-kw">int</span> n = <span class="mcc-num">5</span>;</div>
+                    <div class="mcc-line">&nbsp;&nbsp;<span class="mcc-fn">factorial</span>(n);</div>
+                    <div class="mcc-line">}</div>
+                  </div>
+                  <div class="mc-pipe-panel">
+                    <div class="mcp-phase mcp-done">Lexer</div>
+                    <div class="mcp-arrow">↓</div>
+                    <div class="mcp-phase mcp-done">Parser</div>
+                    <div class="mcp-arrow">↓</div>
+                    <div class="mcp-phase mcp-active">Semantic</div>
+                    <div class="mcp-arrow">↓</div>
+                    <div class="mcp-phase">IR Gen</div>
+                    <div class="mcp-arrow">↓</div>
+                    <div class="mcp-phase">Optimize</div>
+                    <div class="mcp-arrow">↓</div>
+                    <div class="mcp-phase">ASM</div>
+                  </div>
+                </div>
+              </div>
+              <div class="project-overlay">
+                <a href="https://github.com/Shreyanshu-kr/cpp-compiler-visualizer" target="_blank" rel="noopener" class="overlay-btn" aria-label="View C++ Compiler Visualizer source code on GitHub">
+                  <i class="ph ph-github-logo"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">React 18</span>
+                <span class="tag">Tailwind CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Compiler Design</span>
+                <span class="tag">Lucide Icons</span>
+              </div>
+              <h3 class="project-title">C++ Compiler Visualizer</h3>
+              <p class="project-desc">
+                Interactive educational web tool visualizing the 6 core phases of compilation: Lexical Analysis (tokenization), Syntax Parsing (AST), Semantic Analysis, Intermediate Code Generation, Code Optimization, and Target Assembly Generation. Includes step-by-step visual execution flow for Prime Checker, Recursive Factorial, and Fibonacci examples.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/Shreyanshu-kr/cpp-compiler-visualizer" target="_blank" rel="noopener" class="btn btn-sm btn-outline">
+                  <i class="ph ph-github-logo"></i> View Source Code
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: SheCan Foundation NGO Website -->
+          <article class="project-card reveal">
+            <div class="project-img">
+              <img src="image.jpg" alt="SheCan Foundation website preview" class="project-image" />
+              <div class="project-overlay">
+                <a href="https://shecanfoundation-webpage.vercel.app/" target="_blank" rel="noopener" class="overlay-btn" aria-label="View SheCan Foundation live demo">
+                  <i class="ph ph-arrow-square-out"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Responsive Web Design</span>
+                <span class="tag">Vercel</span>
+              </div>
+              <h3 class="project-title">SheCan Foundation NGO Website</h3>
+              <p class="project-desc">
+                A modern and responsive NGO digital platform built to support youth and women empowerment through education and mentorship. Features an engaging hero section, program showcases (Skill Labs, Sisterhood Mentorship, Community Safe Circles), an interactive volunteer application workflow, and full mobile responsiveness.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/Shreyanshu-kr/Shecanfoundation_webpage" target="_blank" rel="noopener" class="btn btn-sm btn-outline">
+                  <i class="ph ph-github-logo"></i> View Source Code
+                </a>
+                <a href="https://shecanfoundation-webpage.vercel.app/" target="_blank" rel="noopener" class="btn btn-sm btn-primary">
+                  Live Demo <i class="ph ph-arrow-up-right"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="projects-cta reveal">
+          <a href="https://github.com/Shreyanshu-kr?tab=repositories" target="_blank" rel="noopener" class="btn btn-outline">
+            <i class="ph ph-github-logo"></i> View More on GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SKILLS SECTION
+    ============================================================ -->
+    <section id="skills" class="section skills">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">// 02 &middot; CORE EXPERTISE</span>
+          <h2 class="section-title">The tools &amp; technologies I reach for</h2>
+          <p class="section-desc">
+            A comprehensive foundation in modern full-stack development, database architecture, and computer science fundamentals.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+
+          <!-- Category 1: Frontend -->
+          <div class="skill-category reveal">
+            <h3 class="category-title">
+              <i class="ph ph-layout"></i> Frontend Development
+            </h3>
+            <div class="skill-list">
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">React.js &amp; DaisyUI</span>
+                  <span class="skill-pct">85%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">Tailwind CSS &amp; CSS3</span>
+                  <span class="skill-pct">90%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">JavaScript &amp; HTML5</span>
+                  <span class="skill-pct">85%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 2: Backend & Databases -->
+          <div class="skill-category reveal">
+            <h3 class="category-title">
+              <i class="ph ph-database"></i> Backend &amp; Databases
+            </h3>
+            <div class="skill-list">
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">Node.js &amp; Express.js</span>
+                  <span class="skill-pct">80%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">MongoDB &amp; Mongoose</span>
+                  <span class="skill-pct">80%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">MySQL &amp; SQL</span>
+                  <span class="skill-pct">75%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 3: Core CS & Programming -->
+          <div class="skill-category reveal">
+            <h3 class="category-title">
+              <i class="ph ph-terminal-window"></i> Programming &amp; Core CS
+            </h3>
+            <div class="skill-list">
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">C++ &amp; C</span>
+                  <span class="skill-pct">85%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">Data Structures &amp; Algorithms</span>
+                  <span class="skill-pct">85%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-header">
+                  <span class="skill-name">Java &amp; OOP</span>
+                  <span class="skill-pct">80%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Skill tags -->
+        <div class="skill-chips reveal">
+          <span class="chip">React.js</span>
+          <span class="chip">Node.js</span>
+          <span class="chip">Express.js</span>
+          <span class="chip">Socket.io</span>
+          <span class="chip">MongoDB</span>
+          <span class="chip">MySQL</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">C++</span>
+          <span class="chip">Java</span>
+          <span class="chip">C</span>
+          <span class="chip">Tailwind CSS</span>
+          <span class="chip">DaisyUI</span>
+          <span class="chip">Git</span>
+          <span class="chip">GitHub</span>
+          <span class="chip">VS Code</span>
+          <span class="chip">DSA</span>
+          <span class="chip">OOP</span>
+          <span class="chip">DBMS</span>
+          <span class="chip">Operating Systems</span>
+          <span class="chip">Computer Networks</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ABOUT SECTION
+    ============================================================ -->
+    <section id="about" class="section about">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">// 03 &middot; ABOUT ME</span>
+          <h2 class="section-title">The person behind the code</h2>
+          <p class="section-desc">
+            A developer who loves crafting responsive interfaces, scalable APIs, and exploring computational design.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p>
+              I am a Computer Science &amp; Engineering undergraduate (2023–2027) at <strong>Graphic Era Hill University</strong>, Dehradun, with a CGPA of 7.15. I specialize in building modern, responsive full-stack applications with React.js, Node.js, Express, and MongoDB.
+            </p>
+            <p>
+              During my project-based <strong>Web Development Internship at Prodigy InfoTech</strong>, I delivered 5 production-style web development projects emphasizing modular component architecture, responsive design, and organized Git version control workflows.
+            </p>
+            <p>
+              Beyond development, I have solved <strong>150+ Data Structures and Algorithms problems</strong> on LeetCode and GeeksforGeeks, and served as the <strong>Media Department Head for Freshers Party 2024</strong> at Graphic Era Hill University, coordinating team workflows under firm deadlines.
+            </p>
+          </div>
+
+          <div class="about-cards reveal">
+            <div class="info-card">
+              <i class="ph ph-graduation-cap info-card-icon"></i>
+              <span class="info-card-label">Education</span>
+              <span class="info-card-val">B.Tech in CSE (2023–2027)</span>
+            </div>
+
+            <div class="info-card">
+              <i class="ph ph-buildings info-card-icon"></i>
+              <span class="info-card-label">University</span>
+              <span class="info-card-val">Graphic Era Hill University</span>
+            </div>
+
+            <div class="info-card">
+              <i class="ph ph-map-pin info-card-icon"></i>
+              <span class="info-card-label">Location</span>
+              <span class="info-card-val">Dehradun, India</span>
+            </div>
+
+            <div class="info-card">
+              <i class="ph ph-briefcase info-card-icon"></i>
+              <span class="info-card-label">Opportunity Status</span>
+              <span class="info-card-val status-available">Open to Internships &amp; SDE</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ACHIEVEMENTS SECTION
+    ============================================================ -->
+    <section id="achievements" class="section achievements">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">// 04 &middot; KEY MILESTONES</span>
+          <h2 class="section-title">Achievements &amp; Leadership</h2>
+          <p class="section-desc">
+            Measurable accomplishments across algorithmic problem-solving, real-world development, and team leadership.
+          </p>
+        </div>
+
+        <div class="achievements-grid">
+          <div class="ach-card reveal">
+            <div class="ach-icon"><i class="ph ph-code-block"></i></div>
+            <div class="ach-num-wrap">
+              <span class="ach-num counter" data-target="150">0</span>
+              <span class="ach-plus">+</span>
+            </div>
+            <p class="ach-label">DSA Problems Solved</p>
+            <p class="ach-sub">LeetCode &amp; GeeksforGeeks</p>
+          </div>
+
+          <div class="ach-card reveal">
+            <div class="ach-icon"><i class="ph ph-briefcase"></i></div>
+            <div class="ach-num-wrap">
+              <span class="ach-num counter" data-target="1">0</span>
+            </div>
+            <p class="ach-label">Web Dev Internship</p>
+            <p class="ach-sub">Prodigy InfoTech (5 Projects)</p>
+          </div>
+
+          <div class="ach-card reveal">
+            <div class="ach-icon"><i class="ph ph-folders"></i></div>
+            <div class="ach-num-wrap">
+              <span class="ach-num counter" data-target="3">0</span>
+            </div>
+            <p class="ach-label">Featured Projects</p>
+            <p class="ach-sub">Full-Stack &amp; CS Visualizer</p>
+          </div>
+
+          <div class="ach-card reveal">
+            <div class="ach-icon"><i class="ph ph-users-three"></i></div>
+            <div class="ach-num-wrap">
+              <span class="ach-num counter" data-target="2024">0</span>
+            </div>
+            <p class="ach-label">Media Department Head</p>
+            <p class="ach-sub">Freshers Party 2024 · GEHU</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         RESUME SECTION
+    ============================================================ -->
+    <section id="resume" class="section resume-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">// 05 &middot; BACKGROUND &amp; CV</span>
+          <h2 class="section-title">Education &amp; Experience</h2>
+          <p class="section-desc">
+            A chronological timeline of my academic background and practical industry internship experience.
+          </p>
+        </div>
+
+        <div class="resume-layout">
+          <div class="resume-timeline reveal">
+            <h3 class="timeline-heading"><i class="ph ph-briefcase"></i> Timeline</h3>
+            <div class="timeline-list">
+              <div class="timeline-item">
+                <div class="tl-dot"></div>
+                <span class="tl-year">Aug 1, 2026 – Aug 31, 2026</span>
+                <h4 class="tl-title">Web Development Intern — Prodigy InfoTech</h4>
+                <p class="tl-desc">
+                  Developed 5 hands-on web development projects using HTML, CSS, JavaScript, and React.js with focus on responsive design and interactive components. Managed source code with Git and GitHub workflows.
+                </p>
+                <a href="https://drive.google.com/file/d/1t4cs76Z2qAeBhFHpsG6KjDeElZRPU7Oh/view?usp=drivesdk" target="_blank" rel="noopener" class="cert-link">
+                  <i class="ph ph-certificate"></i> View Internship Certificate <i class="ph ph-arrow-up-right"></i>
+                </a>
+              </div>
+
+              <div class="timeline-item">
+                <div class="tl-dot"></div>
+                <span class="tl-year">2023 – 2027</span>
+                <h4 class="tl-title">B.Tech in Computer Science &amp; Engineering</h4>
+                <p class="tl-desc">
+                  Graphic Era Hill University, Dehradun · CGPA: 7.15<br />
+                  Relevant Coursework: Data Structures &amp; Algorithms, Object-Oriented Programming, DBMS, Operating Systems, Computer Networks.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="resume-highlights reveal">
+            <h3 class="timeline-heading"><i class="ph ph-lightning"></i> Key Highlights</h3>
+            <ul class="highlight-list">
+              <li><i class="ph ph-check-circle"></i> 150+ DSA problems solved across LeetCode &amp; GFG</li>
+              <li><i class="ph ph-check-circle"></i> Full-Stack (React 18, Node.js, Express, Socket.io, MongoDB)</li>
+              <li><i class="ph ph-check-circle"></i> Practical experience from Prodigy InfoTech internship</li>
+              <li><i class="ph ph-check-circle"></i> Media Department Head leadership at GEHU Freshers 2024</li>
+              <li><i class="ph ph-check-circle"></i> Clean, responsive UI with Tailwind CSS &amp; DaisyUI</li>
+              <li><i class="ph ph-check-circle"></i> Solid foundation in C++, Java, DBMS &amp; OOP</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="resume-cta reveal">
+          <a href="Resume/Shreyanshu_Resume (3).pdf" target="_blank" rel="noopener" class="btn btn-outline">
+            <i class="ph ph-eye"></i> View Resume
+          </a>
+          <a href="Resume/Shreyanshu_Resume (3).pdf" download="Shreyanshu_Kumar_Resume.pdf" class="btn btn-primary">
+            <i class="ph ph-download-simple"></i> Download PDF
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT SECTION
+    ============================================================ -->
+    <section id="contact" class="section contact">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">// 06 &middot; GET IN TOUCH</span>
+          <h2 class="section-title">Let's build something together</h2>
+          <p class="section-desc">
+            Currently open to Software Engineer, Software Developer, and Full-Stack Developer internships and opportunities.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-form-wrap reveal">
+            <form id="contactForm" action="https://formspree.io/f/meaajpep" method="POST" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Your Name</label>
+                  <input type="text" id="name" name="name" placeholder="John Doe" autocomplete="name" required />
+                  <span class="form-error" id="nameError"></span>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input type="email" id="email" name="email" placeholder="john@example.com" autocomplete="email" required />
+                  <span class="form-error" id="emailError"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="Internship / Project Opportunity" />
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Hi Shreyanshu, I'd like to discuss..." required></textarea>
+                <span class="form-error" id="messageError"></span>
+              </div>
+              <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+                <i class="ph ph-paper-plane-tilt"></i>
+                <span>Send Message</span>
+              </button>
+              <div class="form-success" id="formSuccess">
+                <i class="ph ph-check-circle"></i> Message sent successfully! I will reply promptly.
+              </div>
+              <div class="form-error-banner" id="formError">
+                <i class="ph ph-warning-circle"></i>
+                <span id="formErrorText">Oops! Something went wrong. Please try again or email directly.</span>
+              </div>
+            </form>
+          </div>
+
+          <div class="contact-info-panel reveal">
+            <div class="contact-item">
+              <div class="contact-icon"><i class="ph ph-envelope-simple"></i></div>
+              <div>
+                <span class="ci-label">Email</span>
+                <a href="mailto:shreyanshukumar23@gmail.com" class="ci-val">shreyanshukumar23@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon"><i class="ph ph-phone"></i></div>
+              <div>
+                <span class="ci-label">Phone</span>
+                <a href="tel:+917737328601" class="ci-val">+91 7737328601</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon"><i class="ph ph-map-pin"></i></div>
+              <div>
+                <span class="ci-label">Location</span>
+                <span class="ci-val">Dehradun, India</span>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon"><i class="ph ph-globe"></i></div>
+              <div>
+                <span class="ci-label">Profiles</span>
+                <div style="display:flex;gap:0.75rem;margin-top:0.35rem;">
+                  <a href="https://github.com/Shreyanshu-kr" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+                    <i class="ph ph-github-logo"></i>
+                  </a>
+                  <a href="https://www.linkedin.com/in/shreyanshu-kr/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+                    <i class="ph ph-linkedin-logo"></i>
+                  </a>
+                  <a href="https://leetcode.com/u/shreyanshukr/" target="_blank" rel="noopener" class="social-link" aria-label="LeetCode">
+                    <svg viewBox="0 0 24 24" class="leet-svg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="LeetCode" aria-hidden="true">
+                      <path fill="#FFA116" d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0z"/>
+                      <path fill="#262626" d="M10.617 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="availability-badge">
+              <span class="pulse-dot"></span> Available for Software Developer roles &amp; internships
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <!-- 1. LEFT SECTION: Brand Logo & Tagline -->
+      <div class="footer-brand">
+        <a href="#home" class="footer-logo" aria-label="shreyanshu.dev - Back to top">
+          shreyanshu<span class="footer-logo-ext">.dev</span>
+        </a>
+        <p class="footer-tagline">Building thoughtful digital experiences.</p>
+      </div>
+
+      <!-- 2. CENTER SECTION: Copyright Notice -->
+      <div class="footer-center">
+        <p class="footer-copyright">&copy; 2026 Shreyanshu Kumar. All rights reserved.</p>
+      </div>
+
+      <!-- 3. RIGHT SECTION: Social & Professional Links -->
+      <nav class="footer-socials" aria-label="Social and professional links">
+        <a href="https://github.com/Shreyanshu-kr" target="_blank" rel="noopener" class="footer-social-link" aria-label="GitHub Profile">
+          <i class="ph ph-github-logo"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/shreyanshu-kr/" target="_blank" rel="noopener" class="footer-social-link" aria-label="LinkedIn Profile">
+          <i class="ph ph-linkedin-logo"></i>
+        </a>
+        <a href="https://leetcode.com/u/shreyanshukr/" target="_blank" rel="noopener" class="footer-social-link" aria-label="LeetCode Profile">
+          <svg viewBox="0 0 24 24" class="footer-leet-svg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="LeetCode" aria-hidden="true">
+            <path fill="#FFA116" d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0z"/>
+            <path fill="#262626" d="M10.617 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/>
+          </svg>
+        </a>
+        <a href="mailto:shreyanshukumar23@gmail.com" class="footer-social-link" aria-label="Send Email">
+          <i class="ph ph-envelope-simple"></i>
+        </a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="ph ph-arrow-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
