@@ -15,7 +15,10 @@ const $$ = (sel) => document.querySelectorAll(sel);
 function initAnimatedBackground() {
   const canvas = document.getElementById('bgCanvas');
   if (!canvas) return;
+  if (canvas.dataset.initialized) return;
+  canvas.dataset.initialized = 'true';
   const ctx = canvas.getContext('2d');
+  if (!ctx) return;
 
   let width = (canvas.width = window.innerWidth);
   let height = (canvas.height = window.innerHeight);
@@ -42,6 +45,17 @@ function initAnimatedBackground() {
     { r: 183, g: 168, b: 154 }, // Cosmic Latte (#B7A89A)
     { r: 232, g: 220, b: 198 }  // Mocha Cream (#E8DCC6)
   ];
+
+  function updateParticlePalette() {
+    const dark = document.documentElement.dataset.theme === 'dark';
+    colors.slice(0, 3).forEach(color => Object.assign(color, dark
+      ? { r: 168, g: 91, b: 101 } : { r: 114, g: 47, b: 55 }));
+  }
+  updateParticlePalette();
+  document.addEventListener('themechange', () => {
+    updateParticlePalette();
+    if (prefersReducedMotion) animate();
+  });
 
   class Particle {
     constructor(initial = true) {
@@ -208,31 +222,60 @@ const hamburger = $('#hamburger');
 const navLinks = $('#navLinks');
 
 if (hamburger && navLinks) {
-  hamburger.addEventListener('click', () => {
-    const isOpen = navLinks.classList.toggle('open');
-    hamburger.classList.toggle('open', isOpen);
-    hamburger.setAttribute('aria-expanded', isOpen);
-    document.body.style.overflow = isOpen ? 'hidden' : '';
+  const mobile = window.matchMedia('(max-width: 768px)');
+  function setMenu(open, restoreFocus = false) {
+    open = open && mobile.matches;
+    navLinks.classList.toggle('open', open);
+    hamburger.classList.toggle('open', open);
+    hamburger.setAttribute('aria-expanded', String(open));
+    hamburger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    navLinks.inert = mobile.matches && !open;
+    if (restoreFocus) hamburger.focus();
+  }
+  hamburger.addEventListener('click', () => setMenu(!navLinks.classList.contains('open')));
+  navLinks.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => setMenu(false, mobile.matches));
   });
-
-  navLinks.querySelectorAll('.nav-link').forEach((link) => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      hamburger.classList.remove('open');
-      hamburger.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
+  document.addEventListener('click', e => {
+    if (!navbar.contains(e.target)) setMenu(false);
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && navLinks.classList.contains('open')) setMenu(false, true);
+  });
+  navbar.addEventListener('focusout', () => {
+    requestAnimationFrame(() => {
+      if (!navbar.contains(document.activeElement)) setMenu(false);
     });
   });
-
-  document.addEventListener('click', (e) => {
-    if (!navbar.contains(e.target) && navLinks.classList.contains('open')) {
-      navLinks.classList.remove('open');
-      hamburger.classList.remove('open');
-      hamburger.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    }
-  });
+  mobile.addEventListener('change', () => setMenu(false));
+  setMenu(false);
 }
+
+// Explicit theme choices override the system and synchronize across tabs.
+const themeToggle = $('#themeToggle');
+const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+let savedTheme;
+try { savedTheme = localStorage.getItem('portfolio-theme'); } catch (_) {}
+function applyTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  themeToggle.setAttribute('aria-pressed', String(theme === 'dark'));
+  themeToggle.title = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
+  document.dispatchEvent(new Event('themechange'));
+}
+applyTheme(document.documentElement.dataset.theme);
+themeToggle.addEventListener('click', () => {
+  savedTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+  applyTheme(savedTheme);
+  try { localStorage.setItem('portfolio-theme', savedTheme); } catch (_) {}
+});
+systemTheme.addEventListener('change', e => {
+  if (savedTheme !== 'light' && savedTheme !== 'dark') applyTheme(e.matches ? 'dark' : 'light');
+});
+window.addEventListener('storage', e => {
+  if (e.key !== 'portfolio-theme' && e.key !== null) return;
+  savedTheme = e.newValue;
+  applyTheme(savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : (systemTheme.matches ? 'dark' : 'light'));
+});
 
 // ─── 4. TYPING ANIMATION (ROLES) ─────────────────────────────
 const roles = [
